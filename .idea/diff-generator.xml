@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DiffGenerationConfig">
+    <option name="snapshotDb" value="false" />
+    <option name="snapshotDbValue" value="4fe94746-2ebd-4b8b-8d4f-0987a1b41c97" />
+    <option name="snapshotModelValue" value="product:product" />
+    <option name="sourceModelValue" value="product:product" />
+    <option name="targetDbValue" value="4fe94746-2ebd-4b8b-8d4f-0987a1b41c97" />
+  </component>
+</project>

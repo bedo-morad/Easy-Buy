@@ -6,6 +6,8 @@ import com.easybuy.easybuy.kafka.OrderConfirmation;
 import com.easybuy.easybuy.kafka.OrderProducer;
 import com.easybuy.easybuy.orderline.OrderLineRequest;
 import com.easybuy.easybuy.orderline.OrderLineService;
+import com.easybuy.easybuy.payment.PaymentClient;
+import com.easybuy.easybuy.payment.PaymentRequest;
 import com.easybuy.easybuy.product.ProductClient;
 import com.easybuy.easybuy.product.PurchaseRequest;
 import jakarta.persistence.EntityNotFoundException;
@@ -21,6 +23,7 @@ import java.util.stream.Collectors;
 public class OrderService {
     private final CustomerClient customerClient;
     private final ProductClient productClient;
+    private final PaymentClient paymentClient;
     private final OrderRepository repository;
     private final OrderMapper mapper;
     private final OrderLineService orderLineService;
@@ -45,7 +48,13 @@ public class OrderService {
                     )
             );
         }
-        //todo start payment process
+        paymentClient.requestOrderPayment(new PaymentRequest(
+                request.amount(),
+                request.paymentMethod(),
+                order.getId(),
+                order.getReference(),
+                customer
+        ));
 
         orderProducer.sendOrderConfirmation(new OrderConfirmation(
                 request.reference(),

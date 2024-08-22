@@ -56,7 +56,13 @@ services:
     ports:
       - 1080:1080
       - 1025:1025
-
+  zipkin:
+    container_name: zipkin
+    image: openzipkin/zipkin
+    ports:
+      - 9411:9411
+    networks:
+      - easy-buy-network
 networks:
   easy-buy-network:
     driver: bridge

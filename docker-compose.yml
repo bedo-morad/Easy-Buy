@@ -63,6 +63,18 @@ services:
       - 9411:9411
     networks:
       - easy-buy-network
+  keycloak:
+    container_name: keycloak-easy-buy
+    image: quay.io/keycloak/keycloak:25.0.4
+    ports:
+      - 9098:8080
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: password
+    networks:
+      - easy-buy-network
+    command:
+      - "start-dev"
 networks:
   easy-buy-network:
     driver: bridge

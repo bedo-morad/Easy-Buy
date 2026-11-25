@@ -6,7 +6,7 @@
 
 # Build outputs
 target/
-out/'
+out/
 *.class
 *.jar
 *.war

@@ -1,0 +1,16 @@
+#Intellji IDEA 
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Build outputs
+target/
+out/
+*.class
+*.jar
+*.war
+
+# OS
+.DS_Store
+Thumbs.db

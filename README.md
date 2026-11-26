@@ -14,11 +14,11 @@ Easy-Buy is a **Spring Boot microservices backend** for an e-commerce workflow (
 
 ## Architecture
 
-![Global architecture](digrarams/Global%20architecture.png)
+![Global architecture](diagrams/Global%20architecture.png)
 
 ## Data model
 
-![Entity relationship diagram](digrarams/ERD.png)
+![Entity relationship diagram](diagrams/ERD.png)
 
 ## Services
 
